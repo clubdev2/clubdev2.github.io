@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+	<title>開発二部</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen.css">
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+  </script>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>開発二部について</h1>
+    <p><a href="https://twitter.com/search?q=%23%E3%81%A7%E3%81%B6%E3%81%A4%E3%83%BC">#でぶつー</a></p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>開発二部</h2>
+		<p>Brought to you by <a href="https://twitter.com/kfly8">@kfly8</a></p>
+		<img src="pictures/cover.jpg" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+      .slide h2 a {
+        text-shadow: 0 0 15px #ccc;
+      }
+			.Picture h2 {
+				color:#FFF;
+        text-shadow: 0 0 10px #000;
+				}
+		</style>
+	</div></section>
+	<section class="slide"><div>
+		<h2>説明しよう！開発二部とは！</h2>
+		<ol>
+			<li>なにしてるの？</li>
+			<li>いつ活動してるの？</li>
+			<li>どんな人がいるの？</li>
+			<li>いいところは？</li>
+			<li>わるいところは？</li>
+			<li>今後</li>
+		</ol>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>なにしてるの？</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout Picture"><div>
+		<h2>ものつくり！</h2>
+		<img src="pictures/6774558732_6e5bb868a7_b.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout Picture"><div>
+		<h2>ライブラリ</h2>
+		<img src="pictures/6774558732_6e5bb868a7_b.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout Picture"><div>
+		<h2>アプリ</h2>
+		<img src="pictures/6774558732_6e5bb868a7_b.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout Picture"><div>
+		<h2>時に検証</h2>
+		<img src="pictures/6774558732_6e5bb868a7_b.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout Picture"><div>
+		<h2>手を動かす</h2>
+		<img src="pictures/6774558732_6e5bb868a7_b.jpg" alt="">
+    <p class="note">プログラムじゃなくてハードもok</p>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>なにつくってるの？</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout"><div>
+    <h2 style="font-size: 200px"><a href="https://github.com/karupanerura/nodebal">nodebal</a></h2>
+		<img src="pictures/LB.png" alt="">
+    <p class="note">created by <a href="https://twitter.com/karupanerura">@karupanerura</a>. </p>
+	</div></section>
+	<section class="slide cover shout"><div>
+    <h2 style="font-size: 200px"><a href="https://github.com/rymizuki/p5-Spica">Spica</a></h2>
+		<img src="pictures/spica.jpg" alt="">
+    <p class="note">created by <a href="https://twitter.com/mizuki_r">@mizuki_r</a>.</p>
+	</div></section>
+	<section class="slide cover shout"><div>
+    <h2 style="font-size: 100px; line-height:175px;"><a href="https://play.google.com/store/apps/details?id=com.lycoris102.boxrunner">ユグドラシルの大地と<br />魔法の箱</a></h2>
+		<img width="1100px" src="pictures/yugu.webp" alt="">
+    <p class="note">created by 青木とと. </p>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>いつ活動しているの？</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout Picture"><div>
+		<h2>週一もくもく</h2>
+		<img src="pictures/6774558732_6e5bb868a7_b.jpg" alt="">
+	</div></section>
+	<section class="slide cover shout Picture"><div>
+		<h2>月一LT</h2>
+		<img src="pictures/3668169284_79a241959c_b.jpg" alt="">
+    <p class="note">LT=ライトニングトーク. ５分という限られた短い時間でネタを話す<p>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>どんな人がいるの？</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/4759860483_4d18f8fe5b_b.jpg" alt="">
+    <div  id="piechart" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+      var drawChart = function() {
+          var data = google.visualization.arrayToDataTable([
+                  ['メンバー構成', 'Percentage'],
+                  ['牡蠣',       10],
+                  ['寿司',       25],
+                  ['日本酒',     10],
+                  ['ぎょうざ',   10],
+                  ['ラブライブ', 10],
+                  ['艦コレ',     10],
+                  ['花澤香菜',   10],
+                  ['その他',     20]
+                  ]);
+
+          var options = {
+            legend: 'none',
+            pieSliceText: 'label',
+            slices: {
+              1: {offset: 0.3}
+            },
+            backgroundColor: 'transparent'
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+      };
+      drawChart();
+    </script>
+    </div>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>いいところは？</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide shout"><div>
+    <h2>開発<br />たのしい！</h2>
+    <p class="note">人によってたのしいはそれぞれあれどw</p>
+	</div></section>
+	<section class="slide shout"><div>
+    <h2>やさしい人が<br />教えてくれる</h2>
+	</div></section>
+	<section class="slide shout"><div>
+    <h2>アウトプット<br />半強制</h2>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>わるいところは？</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>部長(俺)が部費を使わない</h2>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>今後は？</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>ラピロいじり</h2>
+    <p class="note">ハードよりのこともしたい<p>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>アウトプット向上</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>寿司LT大会</h2>
+    <p class="note">たぶん、５、６月...</p>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>まとめ</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>たのしいから</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>とりあえず</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>新卒全員</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>入部で！</h2>
+    <p class="note">開発二部に清き一票をw</p>
+	</div></section>
+	<section class="slide cover Picture"><div>
+		<h2>ご清聴ありがとうございました</h2>
+		<img src="pictures/picture.jpg" alt="">
+	</div></section>
+	<div class="progress"><div></div></div>
+	<script src="node_modules/shower-core/shower.min.js"></script>
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
