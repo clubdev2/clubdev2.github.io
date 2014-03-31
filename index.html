@@ -9,6 +9,31 @@
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
+    var drawChart = function(id, row) {
+        var data = google.visualization.arrayToDataTable([
+                ['メンバー構成', 'Percentage'],
+                ['寿司',       25],
+                ['牡蠣',       10],
+                ['日本酒',     10],
+                ['ぎょうざ',   10],
+                ['ラブライブ', 10],
+                ['艦コレ',     10],
+                ['花澤香菜',   10],
+                ['その他',     20]
+                ]);
+
+        var options = {
+          legend: 'none',
+          pieSliceText: 'label',
+          backgroundColor: 'transparent',
+          pieStartAngle: -20,
+        };
+        options.slices = {};
+        options.slices[row] = { offset: 0.2 };
+
+        var chart = new google.visualization.PieChart(document.getElementById(id));
+        chart.draw(data, options);
+    };
   </script>
 </head>
 <body class="list">
@@ -42,16 +67,29 @@
 					color:#FFF;
 					}
       .slide h2 a {
+        border-bottom: 0;
         text-shadow: 0 0 15px #ccc;
       }
-			.Picture h2 {
+      .Picture h2 {
 				color:#FFF;
-        text-shadow: 0 0 10px #000;
+        text-shadow: 0 0 6px #000;
+      }
+			.Picture li {
+				color:#FFF;
+        text-shadow: 0 0 3px #000;
 				}
+			.Picture p.note {
+				color:#FFF;
+        text-shadow: 0 0 3px #000;
+				}
+      .slide ol li:before, .slide ul li:before {
+        color: #fff;
+      }
 		</style>
 	</div></section>
-	<section class="slide"><div>
+	<section class="slide cover Picture"><div>
 		<h2>説明しよう！開発二部とは！</h2>
+		<img src="pictures/11864691753_221e8aab27_b.jpg" alt="">
 		<ol>
 			<li>なにしてるの？</li>
 			<li>いつ活動してるの？</li>
@@ -90,17 +128,17 @@
 		<h2>なにつくってるの？</h2>
 		<img src="pictures/picture.jpg" alt="">
 	</div></section>
-	<section class="slide cover shout"><div>
-    <h2 style="font-size: 200px"><a href="https://github.com/karupanerura/nodebal">nodebal</a></h2>
-		<img src="pictures/LB.png" alt="">
+	<section class="slide cover shout Picture"><div>
+    <h2 style="font-size: 250px"><a href="https://github.com/karupanerura/nodebal">nodebal</a></h2>
+		<img src="pictures/3734424634_1fa3e54c71_b.jpg" alt="">
     <p class="note">created by <a href="https://twitter.com/karupanerura">@karupanerura</a>. </p>
 	</div></section>
-	<section class="slide cover shout"><div>
-    <h2 style="font-size: 200px"><a href="https://github.com/rymizuki/p5-Spica">Spica</a></h2>
+	<section class="slide cover shout Picture"><div>
+    <h2 style="font-size: 250px"><a href="https://github.com/rymizuki/p5-Spica">Spica</a></h2>
 		<img src="pictures/spica.jpg" alt="">
     <p class="note">created by <a href="https://twitter.com/mizuki_r">@mizuki_r</a>.</p>
 	</div></section>
-	<section class="slide cover shout"><div>
+	<section class="slide cover shout Picture"><div>
     <h2 style="font-size: 100px; line-height:175px;"><a href="https://play.google.com/store/apps/details?id=com.lycoris102.boxrunner">ユグドラシルの大地と<br />魔法の箱</a></h2>
 		<img width="1100px" src="pictures/yugu.webp" alt="">
     <p class="note">created by 青木とと. </p>
@@ -124,35 +162,65 @@
 	</div></section>
   <section class="slide cover shout"><div>
 		<img src="pictures/4759860483_4d18f8fe5b_b.jpg" alt="">
-    <div  id="piechart" style="padding:0; width: 100%; height: 100%;">
+    <div id="piechart0" style="padding:0; width: 100%; height: 100%;">
     <script type="text/javascript">
-      google.setOnLoadCallback(drawChart);
-      var drawChart = function() {
-          var data = google.visualization.arrayToDataTable([
-                  ['メンバー構成', 'Percentage'],
-                  ['牡蠣',       10],
-                  ['寿司',       25],
-                  ['日本酒',     10],
-                  ['ぎょうざ',   10],
-                  ['ラブライブ', 10],
-                  ['艦コレ',     10],
-                  ['花澤香菜',   10],
-                  ['その他',     20]
-                  ]);
-
-          var options = {
-            legend: 'none',
-            pieSliceText: 'label',
-            slices: {
-              1: {offset: 0.3}
-            },
-            backgroundColor: 'transparent'
-          };
-
-          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-          chart.draw(data, options);
-      };
-      drawChart();
+      drawChart('piechart0', 0); // 寿司
+    </script>
+    </div>
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/12129451974_3a72c6d180_b.jpg" alt="">
+    <div id="piechart1" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      drawChart('piechart1', 1); // 牡蠣
+    </script>
+    </div>
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/7534264206_e9c5643f19_b.jpg" alt="">
+    <div id="piechart2" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      drawChart('piechart2', 2); // 酒
+    </script>
+    </div>
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/2649959218_99a71836f8_o.jpg" alt="">
+    <div id="piechart3" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      drawChart('piechart3', 3); // 餃子
+    </script>
+    </div>
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/8461286764_5e9e1a80d3_b.jpg" alt="">
+    <div id="piechart4" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      drawChart('piechart4', 4); // ラブライブ
+    </script>
+    </div>
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/6c6806f9.jpg" alt="">
+    <div id="piechart5" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      drawChart('piechart5', 5); // かんこれ
+    </script>
+    </div>
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/D5_0GUW2.jpeg" alt="">
+    <div id="piechart6" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      drawChart('piechart6', 6); // 花澤香菜
+    </script>
+    </div>
+	</div></section>
+  <section class="slide cover shout"><div>
+		<img src="pictures/9416843009_cc0133e3a6_b.jpg" alt="">
+    <div id="piechart7" style="padding:0; width: 100%; height: 100%;">
+    <script type="text/javascript">
+      drawChart('piechart7', 7); // その他
     </script>
     </div>
 	</div></section>
@@ -160,15 +228,18 @@
 		<h2>いいところは？</h2>
 		<img src="pictures/picture.jpg" alt="">
 	</div></section>
-	<section class="slide shout"><div>
+	<section class="slide shout cover Picture"><div>
     <h2>開発<br />たのしい！</h2>
-    <p class="note">人によってたのしいはそれぞれあれどw</p>
+		<img src="pictures/3699993300_8d7edbb91f_b.jpg" alt="">
+    <p class="note">人によってたのしいはそれぞれあれど</p>
 	</div></section>
-	<section class="slide shout"><div>
+	<section class="slide shout cover Picture"><div>
     <h2>やさしい人が<br />教えてくれる</h2>
+		<img src="pictures/4365662437_15942d6143_b.jpg" alt="">
 	</div></section>
-	<section class="slide shout"><div>
+	<section class="slide shout cover Picture"><div>
     <h2>アウトプット<br />半強制</h2>
+		<img src="pictures/3583874642_a3751d874c_b.jpg" alt="">
 	</div></section>
 	<section class="slide cover Picture"><div>
 		<h2>わるいところは？</h2>
@@ -176,41 +247,44 @@
 	</div></section>
 	<section class="slide shout"><div>
 		<h2>部長(俺)が部費を使わない</h2>
+    <p class="note">すいませんすいません</p>
 	</div></section>
 	<section class="slide cover Picture"><div>
 		<h2>今後は？</h2>
 		<img src="pictures/picture.jpg" alt="">
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>ラピロいじり</h2>
-    <p class="note">ハードよりのこともしたい<p>
-	</div></section>
-	<section class="slide shout"><div>
+	<section class="slide shout cover Picture"><div>
 		<h2>アウトプット向上</h2>
+		<img src="pictures/4298911131_ffbae9b3bd_b.jpg" alt="">
 	</div></section>
-	<section class="slide shout"><div>
+	<section class="slide shout cover Picture"><div>
+		<h2>ラピロいじり</h2>
+		<img src="pictures/rapiro.png" alt="">
+    <p class="note">ハードもおk<p>
+	</div></section>
+	<section class="slide shout cover Picture"><div>
 		<h2>寿司LT大会</h2>
+		<img src="pictures/4759860483_4d18f8fe5b_b.jpg" alt="">
     <p class="note">たぶん、５、６月...</p>
 	</div></section>
 	<section class="slide cover Picture"><div>
-		<h2>まとめ</h2>
+		<h2>まとめ！！！！</h2>
 		<img src="pictures/picture.jpg" alt="">
 	</div></section>
 	<section class="slide shout"><div>
-		<h2>たのしいから</h2>
+		<h2 style="font-size: 300px;">たのしいから</h2>
 	</div></section>
 	<section class="slide shout"><div>
-		<h2>とりあえず</h2>
+		<h2 style="font-size: 300px;">とりあえず</h2>
 	</div></section>
 	<section class="slide shout"><div>
-		<h2>新卒全員</h2>
+    <h2 style="font-size: 300px;">新卒<br />全員</h2>
 	</div></section>
 	<section class="slide shout"><div>
-		<h2>入部で！</h2>
-    <p class="note">開発二部に清き一票をw</p>
+		<h2 style="font-size: 300px;">入部で！</h2>
 	</div></section>
 	<section class="slide cover Picture"><div>
-		<h2>ご清聴ありがとうございました</h2>
+		<h2>ご清聴ありがとうございましたー</h2>
 		<img src="pictures/picture.jpg" alt="">
 	</div></section>
 	<div class="progress"><div></div></div>
